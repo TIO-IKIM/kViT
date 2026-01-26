@@ -1,0 +1,29 @@
+# Configuration file for unified training script - MIL dataset mode
+# This config is for training with Multiple Instance Learning (MIL) approach
+
+csv_path: /path/to/csv     # CSV file with data information
+in_channel: 1       # Number of input channels (e.g. 1 for grey-scale, 3 for rgb).
+num_classes: 2      # Number of output channels.
+crop_size: 224      # Size of the crop to be used for training.
+base_output: src/output       # Base output path for saving of results.
+lr: 0.0001
+optimizer: AdamW
+batch_size: 64      # Batch size
+num_workers: 8      # Workers used by dataloader
+num_threads: 1      # Number of threads used by the script
+pin_memory: true
+# Dataset configuration
+dataset_type: 2D   # Options: "2D" or "MIL" - determines which model and data loading approach to use
+dataset_name: FastMriDataset_Prostate  # Options: "FastMriDataset_Knee" "FastMriDataset_Prostate", "ImageDataset", "kSpaceDataset" (for MIL mode)
+kspace: true       # kspace and hybrid are ignored for MIL mode
+hybrid: false       # kspace and hybrid are ignored for MIL mode
+
+# Model configuration
+model: KSpaceTransformer       # Model to be used. Options: "vit", "efficientnet", or "resnet" (Image) or "KSpaceTransformer" (k-space)
+embed_dim: 256
+num_heads: 16
+num_layers: 6
+ff_dim: 768
+dropout: 0.2
+
+comment: best_prostaterun_kvit  # Freeform to give additional context to saving file.

@@ -1,0 +1,23 @@
+# Configuration file for unified training script - MIL dataset mode
+# This config is for training with Multiple Instance Learning (MIL) approach
+
+csv_path: /path/to/csv      # CSV file with data information
+in_channel: 1       # Number of input channels (e.g. 1 for grey-scale, 3 for rgb).
+num_classes: 3      # Number of output channels.
+crop_size: 224      # Size of the crop to be used for training.
+base_output: src/output       # Base output path for saving of results.
+lr: 0.0008518035786635154
+optimizer: Adam
+batch_size: 1      # Batch size
+num_workers: 8      # Workers used by dataloader
+num_threads: 1      # Number of threads used by the script
+pin_memory: true
+
+# Dataset configuration
+dataset_type: MIL   # Options: "2D" or "MIL" - determines which model and data loading approach to use
+dataset_name: ImageDataset  # Options: "FastMriDataset_Knee" "FastMriDataset_Prostate", "ImageDataset", "kSpaceDataset" (for MIL mode)
+kspace: false       # kspace and hybrid are ignored for MIL mode
+hybrid: false       # kspace and hybrid are ignored for MIL mode
+model: vit          # Model to be used. Options: "vit", "efficientnet", or "resnet"
+
+comment: MIL_model_unified  # Freeform to give additional context to saving file.
