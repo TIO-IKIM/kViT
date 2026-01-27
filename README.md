@@ -170,7 +170,15 @@ All random seeds are fixed for reproducibility (seed=1).
 If you use this code for your research, please cite:
 
 ```
-
+@misc{rempe2026efficientcomplexvaluedvisiontransformers,
+      title={Efficient Complex-Valued Vision Transformers for MRI Classification Directly from k-Space}, 
+      author={Moritz Rempe and Lukas T. Rotkopf and Marco Schlimbach and Helmut Becker and Fabian Hörst and Johannes Haubold and Philipp Dammann and Kevin Kröninger and Jens Kleesiek},
+      year={2026},
+      eprint={2601.18392},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2601.18392}, 
+}
 ```
 
 ## Contact
